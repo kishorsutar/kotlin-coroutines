@@ -41,8 +41,6 @@ class MainViewModel : ViewModel() {
      */
     private val _snackBar = MutableLiveData<String>()
 
-//    private val vieModelJob = Job()
-//    private val uiScope = CoroutineScope(Dispatchers.Main + vieModelJob)
 
     /**
      * Request a snackbar to display a string.
@@ -54,7 +52,7 @@ class MainViewModel : ViewModel() {
      * Wait one second then display a snackbar.
      */
     fun onMainViewClicked() {
-        // TODO: Replace with coroutine implementation
+
         viewModelScope.launch(Dispatchers.IO) {
             delay(1_000) // look at the symbol
             _snackBar.postValue("Hello, from Coroutines!")
